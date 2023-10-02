@@ -28,5 +28,7 @@ def create_app(test_config=None):
     @app.route('/gotti')
     def hello():
         return 'Hola soy Gotti'
-        
+    
+    from . import db
+    db.init_app(app)
     return app
