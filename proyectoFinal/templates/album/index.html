@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block header %}
+<h1>{% block title %}lagotita{% endblock %}</h1>
+{% endblock %} {% block content %} {% for alb in albums %}
+<article class="albums">
+  <header>
+    <div>
+      <h1>{{ alb['Titulo'] }}</h1>
+      <div class="de">Artista: {{ alb['Artista'] }}</div>
+      <div class="de">Duracion: {{ alb['Duracion'] }}</div>
+    </div>
+  </header>
+</article>
+{% endfor %} {% endblock %}
