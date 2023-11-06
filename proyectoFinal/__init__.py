@@ -27,17 +27,17 @@ def create_app(test_config=None):
     from . import db
     db.init_app(app)
 
-    from . import musica
-    app.register_blueprint(musica.bp)
-    app.add_url_rule('/', endpoint='index')
+    from . import canciones
+    app.register_blueprint(canciones.bp)
+    app.add_url_rule('/', endpoint='canción.index')
 
-    from . import artistas
-    app.register_blueprint(artistas.bp)
-    app.add_url_rule('/', endpoint='Artista.index')
+    from . import artista
+    app.register_blueprint(artista.bp)
+    app.add_url_rule('/', endpoint='artistas.index')
 
-    from . import albumes
-    app.register_blueprint(albumes.bp)
-    app.add_url_rule('/', endpoint='Album.index')
+    from . import album
+    app.register_blueprint(album.bp)
+    app.add_url_rule('/', endpoint='album.index')
 
     return app
   

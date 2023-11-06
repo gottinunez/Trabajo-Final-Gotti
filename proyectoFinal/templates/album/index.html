@@ -1,13 +1,17 @@
-{% extends 'base.html' %} {% block header %}
-<h1>{% block title %}lagotita{% endblock %}</h1>
-{% endblock %} {% block content %} {% for alb in albums %}
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+{% block header %}
+<header>
+  <h1>{% block title %}Albumes{% endblock %}</h1>
+</header>
+{% endblock %} {% block content %} {% for albumes in album %}
 <article class="albums">
-  <header>
+  <body>
     <div>
-      <h1>{{ alb['Titulo'] }}</h1>
-      <div class="de">Artista: {{ alb['Artista'] }}</div>
-      <div class="de">Duracion: {{ alb['Duracion'] }}</div>
+      <h1>{{ albumes['Album'] }}</h1>
+      <div class="de">Artista: {{ albumes['Artista'] }}</div>
+      <div class="de">Duración: {{ albumes['Duración'] }} milisegundos</div>
     </div>
-  </header>
+  </body>
 </article>
 {% endfor %} {% endblock %}

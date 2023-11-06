@@ -10,9 +10,10 @@ bp = Blueprint('artista', __name__)
 @bp.route('/artista')
 def index():
     db = get_db()
-    cancion = db.execute(
-        """SELECT t.name AS Cancion, a.name AS Artista FROM tracks t
-           JOIN albums al ON t.AlbumId = al.AlbumId
-           JOIN artists a ON al.ArtistId = a.ArtistId"""
+    artistas = db.execute(
+        """SELECT ar.name AS Nombre, count(al.AlbumId) AS Albums
+         FROM artists ar JOIN albums al ON ar.ArtistId = al.ArtistId
+		 GROUP BY Nombre
+         ORDER BY Nombre ASC"""
     ).fetchall()
-    return render_template('artista/index.html', cancion=cancion)
+    return render_template('artistas/index.html', artistas=artistas)
