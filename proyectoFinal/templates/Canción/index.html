@@ -8,10 +8,15 @@
 <article class="Cancion">
   <body>
     <div>
-      <h1>{{ Cancion['Cancion'] }}</h1>
-      <div class="de">Artista: {{ Cancion['Artista'] }}</div>
-      <div class="de">Album: {{ Cancion['Album']}}</div>
-      <div class="de">Género: {{ Cancion['Genero']}}</div>
+      <h1>Cancion: {{ Cancion['Cancion'] }}</h1>
+      <ul>
+        <h3>
+          <a class="links" href="{{ url_for('artista.index') }}">Artistas</a>
+        </h3>
+        <h3>
+          <a class="links" href="{{ url_for('album.index') }}">Albumes</a>
+        </h3>
+      </ul>
     </div>
   </body>
 </article>

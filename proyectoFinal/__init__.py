@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask
+from flask import Flask, render_template
 
 
 def create_app(test_config=None):
@@ -23,6 +23,9 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
+    @app.route('/')
+    def pagina():
+        return render_template("base.html")
     
     from . import db
     db.init_app(app)
@@ -33,7 +36,7 @@ def create_app(test_config=None):
 
     from . import artista
     app.register_blueprint(artista.bp)
-    app.add_url_rule('/', endpoint='artistas.index')
+    app.add_url_rule('/', endpoint='artista.index')
 
     from . import album
     app.register_blueprint(album.bp)

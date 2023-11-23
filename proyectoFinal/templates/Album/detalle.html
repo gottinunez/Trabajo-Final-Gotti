@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+{% block header %}
+<header>
+  <h1>{% block title %}{{canciones['Album']}}{% endblock %}</h1>
+  </br >
+</header>
+{% endblock %} {% block content %}
+<body>
+  <div>
+    <h1>Canciones</h1>
+    {% for cancion in canciones %}
+    <ul>
+      <li>Canción: {{ cancion['Cancion'] }}</li>
+      <li>Duración: {{ cancion['Duracion']}}</li>
+    </ul>
+    <br />
+    {% endfor %}
+  </div>
+</body>
+{% endblock %}

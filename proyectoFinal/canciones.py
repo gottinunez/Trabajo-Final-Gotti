@@ -18,4 +18,4 @@ def index():
         JOIN genres g ON g.GenreId = t.GenreId
         ORDER BY t.name DESC"""
     ).fetchall()
-    return render_template('canciones/index.html', canciones=canciones)
+    return render_template('Canción/index.html', canciones=canciones)

@@ -4,12 +4,10 @@
 <header>
   <h1>{% block title %}Artistas{% endblock %}</h1>
 </header>
-{% endblock %} {% block content %} {% for artista in artistas %}
-<article class="artistas">
-  <body>
+{% endblock %} {% block content %} {% for Artista in artistas %}
+<article class="Artista">
     <div>
-      <h1>{{ artista['Nombre'] }}</h1>
-      <div class="de">Albumes: {{ artista['Albums'] }}</div>
+      <h1>Artistas: {{ Artista['Nombre'] }}</h1>
     </div>
   </body>
 </article>

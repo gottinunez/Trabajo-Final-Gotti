@@ -9,7 +9,11 @@ body {
   background: white;
 }
 h1 {
-  font-family: serif;
-  color: #59b20f;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0f6bb2;
   margin: 1rem 0;
 }
+.links{
+    text-decoration: none;
+    color:rgb(132, 0, 0);
+  }
